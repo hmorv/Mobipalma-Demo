@@ -1,0 +1,18 @@
+<div class="col-md-6 col-md-offset-3 fadein-fast">
+	<h1 class="text-center">Bicipalma - Estado de los Anclajes</h1>
+</div>
+<div class="col-md-6 col-md-offset-3 fadein-fast">
+	<ul class="list-group" ng-if="datos.length" ng-repeat="anclaje in datos">
+		<li class="list-group-item bg-info"><h2 class="text-center">{{ lista[$index].nombre_estacion }}</h2></li>
+		<li class="list-group-item"><p class="text-center text-success"><b>Anclajes libres:</b> {{ anclaje.anclajes_libres }}</p></li>
+		<li class="list-group-item"><p class="text-center text-warning"><b>Anclajes ocupados:</b> {{ anclaje.anclajes_ocupados }}</p></li>
+		<li class="list-group-item"><p class="text-center text-warning"><b>Anclajes averiados:</b> {{ anclaje.anclajes_averiados }}</p></li>
+		<li class="list-group-item"><p class="text-center text-success"><b>Bicicletas libres:</b> {{ anclaje.bicis_libres }}</p></li>
+		<li class="list-group-item"><p class="text-center text-warning"><b>Bicicletas averiadas:</b> {{ anclaje.bicis_averiadas }}</p></li>
+		<li class="list-group-item" ng-if="anclaje.cerrado">
+			<p class="text-danger">Anclajes cerrados</p>
+		</li>
+		
+		<li class="list-group-item"></li>
+	</ul>
+</div>

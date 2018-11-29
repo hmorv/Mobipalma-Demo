@@ -1,0 +1,21 @@
+<div class="col-md-10 col-md-offset-1 fadein-fast">
+    <h1 class="text-center">Mapa de Estaciones Bicipalma</h1>
+
+    <a data-go-back-history>Volver Atrás</a>
+
+    <ui-gmap-google-map center='map.center' zoom='map.zoom'>
+		<div ng-repeat="dato in mapas">
+			<ui-gmap-marker coords='dato.coords' options="dato.options" idkey="dato.id">
+				<ui-gmap-window coords='dato.coords' show='false'>
+				<div>{{ title }}
+					<ul class="list-group">
+						<li class="list-group-item">Estación: {{ dato.nombre }}</liñ>
+						<!-- <li class="list-group-item">Plazas: {{ dato.plazas }}</li>
+						<li class="list-group-item">Disponibles: {{ dato.plazasLibres }}</a></li>
+						<li class="list-group-item">Estado: {{ dato.estado }}</a></li> -->
+					</ul>
+				</ui-gmap-window>
+			</ui-gmap-marker>
+		</div>
+	</ui-gmap-google-map>
+</div>

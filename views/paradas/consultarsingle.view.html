@@ -1,0 +1,59 @@
+<div class="col-md-6 col-md-offset-3 fadein-fast">
+    <h1 class="text-center">Consulta Parada EMT</h1>
+
+    <a data-go-back-history>Volver Atrás</a>
+    
+    <!-- <form action="" method="POST" role="form">
+    	<legend>Consultar Parada</legend>
+    
+    	<div class="form-group">
+    		<label for="parada">Número Parada</label>
+    		<input type="number" name="parada" class="form-control" id="parada" placeholder="Nº Parada" maxlength="4" ng-model="parada">
+    	</div>
+    
+    	<button type="button" class="btn btn-primary btn-block" ng-click="enviar()">CONSULTAR</button>
+    </form> -->
+</div>
+
+<div class="col-md-6 col-md-offset-3 col-xs-12 fadein-fast">
+	<h2 class="text-center">{{ datos.nombreParada }}</h2>
+	<p class="bg-info" ng-if="datos.timestamp">Hora de la petición: {{ datos.timestamp | date:'dd-MM-yyyy HH:mm:ss' }}</p>
+	
+	<h3 class="text-warning" ng-if="datos == 'error peticion'">No hay datos para la parada solicitada</h3>
+
+	<ul class="list-group" ng-if="datos.estimaciones.length > 0">
+		<li class="list-group-item" ng-repeat="estimacion in datos.estimaciones">
+			<ul class="list-group">
+				<li class="list-group-item" style="background-color:#{{estimacion.color}}">
+					<p class="text-center linea-emt">LÍNEA: {{ estimacion.line }}</p>
+				</li>
+				<li class="list-group-item">
+					<ul class="list-group">
+						<li class="list-group-item">Destino: {{ estimacion.vh_first.destino }}</li>
+						<li class="list-group-item">Tiempo estimado: {{ estimacion.vh_first.seconds | secondsToDateTime }}</li>
+						<li class="list-group-item bg-danger" ng-if=" estimacion.vh_first.enParada" >
+							<p class="text-center">en parada</p>
+						</li>
+						<li  class="list-group-item bg-danger" ng-if=" estimacion.vh_first.llegando" class="bg-warning">
+							<p class="text-center">en parada</p>
+						</li>
+					</ul>
+				</li>
+				<!-- <li ng-if="estimacion.vh_second"> -->
+				<li class="list-group-item" ng-if="estimacion.vh_second">
+					<ul class="list-group">
+						<li class="list-group-item">Destino: {{ estimacion.vh_second.destino }}</li>
+						<li class="list-group-item">Tiempo estimado: {{ estimacion.vh_second.seconds | secondsToDateTime}}</li>
+						<li class="list-group-item bg-danger" ng-if=" estimacion.vh_second.enParada" class="bg-warning">
+							<p class="text-center">en parada</p>
+						</li>
+						<li class="list-group-item bg-danger" ng-if=" estimacion.vh_second.llegando" class="bg-warning">
+							<p class="text-center">llegando</p>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+	</ul>
+	<h3 class="text-center text-warning" ng-if="datos.estimaciones.length == 0">No se esperan llegadas.</h3>
+</div>

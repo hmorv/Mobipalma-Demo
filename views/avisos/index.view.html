@@ -1,0 +1,30 @@
+<div class="col-md-6 col-md-offset-3 fadein-fast">
+    <h1 class="text-center">Avisos</h1>
+    <h2 class="text-info text-center" ng-if="datos.length > 0">Hay {{ datos.length }} avisos activos</h2>
+    <h2 class="text-success text-center" ng-if="datos.length == 0">No hay avisos activos</h2>
+
+    <ul class="list-group" ng-if="datos.length > 0">
+    	<li class="list-group-item" ng-repeat="aviso in datos">
+    		<h2 class="text-primary text-center" ng-click="showme=!showme">{{ aviso.tituloEs }}</h2>
+            <ul class="list-group" ng-show="showme">
+                <li class="list-group-item text-danger" ng-if="aviso.activo">Aviso activo</li>
+                <li class="list-group-item text-success" ng-if=!aviso.activo>Aviso inactivo</li>
+                <li class="list-group-item">
+    			</li>
+    			<li class="list-group-item">
+    				<p class="text-info">{{ aviso.descripcionEs }}</p>
+    			</li>
+    			<li class="list-group-item">
+    				<p class="text-muted text-center"><b>Fecha inicio:</b> {{ aviso.fechaInicio * 1000 | date:'dd-MM-yyyy HH:mm' }} - <b>Fecha fin:</b> {{ aviso.fechaFin * 1000 | date:'dd-MM-yyyy HH:mm' }}</p>
+    			</li>
+    			<li class="list-group-item">
+    				<p class="text-muted text-center"><b>Servicio Emisor:</b> {{ aviso.servicioEmisorLabel }} - <b>Prioridad:</b> {{ aviso.prioridad }}</p>
+    			</li>
+                <!-- <li class="list-group-item" ng-if="imagenes">
+                    <img src="" alt="">
+                    
+                </li> -->
+    		</ul>
+    	</li>
+    </ul>
+</div>

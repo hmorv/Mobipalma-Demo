@@ -1,0 +1,28 @@
+<div class="col-md-10 col-md-offset-1 fadein-fast">
+    <h1 class="text-center">Listar Paradas EMT</h1>
+
+    <a data-go-back-history>Volver Atrás</a>
+
+    <ui-gmap-google-map center='map.center' zoom='map.zoom'>
+		<div ng-repeat="dato in mapas">
+			<ui-gmap-marker coords='dato.coords' options="dato.options" idkey="dato.id">
+				<ui-gmap-window coords='dato.coords' show='false'>
+				<div>{{ title }}
+					<ul class="list-group">
+						<li class="list-group-item">Nombre Parada: {{ dato.nombre }}</li>
+						<li class="list-group-item">Número parada: {{ dato.numero }}</li>
+						<li class="list-group-item"><a href="#!/paradas/consultar/{{ dato.numero }}">Consultar llegadas</a></li>
+					</ul>
+				</ui-gmap-window>
+			</ui-gmap-marker>
+		</div>
+	</ui-gmap-google-map>
+</div>
+
+
+<gm-infowindow ng-if="showInfo"
+     options="{content: 'Hello World from map!', position:  [40.73685214795608,-74.3060302734375]}"
+     on-closeclick="data.last = 'map'"
+  >
+  	
+  </gm-infowindow>

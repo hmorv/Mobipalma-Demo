@@ -1,0 +1,131 @@
+html {
+	font-size: 16px;
+
+}
+body {
+	/*font-family: 'Indie Flower', cursive!important;*/
+}
+.linea-emt {
+	font-weight: bolder!important;
+	font-size: 2rem!important;
+	color: white;
+}
+
+.botones-paradas {
+	display: block;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+.jumbotron {
+	background-image: url('../images/bg-transport-palma.jpg');
+	background-repeat: no-repeat;
+	  background-size: cover;
+	  border-bottom:2px solid #337ab7
+}
+.jumbotron .container h1 {
+	font-size: 3rem!important;
+	font-family: 'Frijole', cursive;
+
+}
+
+.nav li a {
+	font-size: 1rem;
+	text-transform: uppercase;
+}
+
+.angular-google-map-container { height: 600px; }
+
+
+/* Vista Aparcamientos */
+
+ul li h2 {
+	cursor: pointer;
+}
+
+.home-text {
+	font-size: 1.6rem;
+}
+
+/* animaciones */
+.fade-in {
+	-webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+	-moz-animation: fadein 1s; /* Firefox < 16 */
+	-ms-animation: fadein 1s; /* Internet Explorer */
+	-o-animation: fadein 1s; /* Opera < 12.1 */
+	animation: fadein 1s;
+}
+
+.fadein-fast {
+	-webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+	-moz-animation: fadein 1s; /* Firefox < 16 */
+	-ms-animation: fadein 1s; /* Internet Explorer */
+	-o-animation: fadein 1s; /* Opera < 12.1 */
+	animation: fadein 1s;
+}
+
+.fadein-slow {
+	-webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+	-moz-animation: fadein 2s; /* Firefox < 16 */
+	-ms-animation: fadein 2s; /* Internet Explorer */
+	-o-animation: fadein 2s; /* Opera < 12.1 */
+	animation: fadein 2s;
+}
+
+.fadein-ultraslow {
+	-webkit-animation: fadein 4s; /* Safari, Chrome and Opera > 12.1 */
+	-moz-animation: fadein 4s; /* Firefox < 16 */
+	-ms-animation: fadein 4s; /* Internet Explorer */
+	-o-animation: fadein 4s; /* Opera < 12.1 */
+	animation: fadein 4s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+
+/*	#########################################
+	#########################################
+	############# MEDIA QUERIES #############
+	#########################################
+	######################################### */
+
+
+/* -------------- mi movil ----------------- */
+@media screen and (max-width: 360px) and (max-height: 640px) {
+	.jumbotron .container h1 {
+		font-size: 1rem !important;
+	}
+
+	.nav li a {
+		font-size: 2rem;
+	}
+}
+
+

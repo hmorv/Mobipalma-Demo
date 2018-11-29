@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="Mobipalma">
+<head>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-NCZCLLJ');</script>
+	<!-- End Google Tag Manager -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<title>PalmaTransporting</title>
+	<link href="https://fonts.googleapis.com/css?family=Frijole" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Frijole|Indie+Flower" rel="stylesheet">
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/df.min.css">
+</head>
+<body>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NCZCLLJ"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
+	<!-- main app container -->
+	<div class="jumbotron">
+		<div class="container">
+			<div class="col-xs-12 col-sm-12">
+				<h1 class="text-center">PalmaTransporting</h1>
+			</div>
+		</div>
+	</div>
+
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#!">Inicio</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul class="nav nav-pills nav-justified" ng-controller="Header.MainController">
+					<!-- <li ng-class="{ active: $route.current.activetab == 'home'}">
+						<a href="#!">Inicio</a>
+					</li> -->
+					<li ng-class="{ active: $route.current.activetab == 'aparcamientos' }">
+						<a href="#!/aparcamientos">Aparcamientos</a>
+					</li>
+					<li ng-class="{ active: $route.current.activetab == 'bicipalma' }">
+						<a href="#!/bicipalma">Bicipalma</a>
+					</li>
+					<!-- <li ng-class="{ active: $route.current.activetab == 'camaras' }">
+						<a href="#!/camaras">Cámaras</a>
+					</li> -->
+					<li ng-class="{ active: $route.current.activetab == 'paradas' }">
+						<a href="#!/paradas">Paradas</a>
+					</li>
+					<!-- <li ng-class="{ active: $route.current.activetab == 'trayectos' }">
+						<a href="#!/trayectos">Trayectos</a>
+					</li> -->
+					<li ng-class="{ active: $route.current.activetab == 'avisos' }">
+						<a href="#!/avisos">Avisos</a>
+					</li>
+					<li ng-class="{ active: $route.current.activetab == 'estaciones-electricas' }">
+						<a href="#!/estacioneselectricas">Estaciones Eléctricas</a>
+					</li>
+					<!-- <li ng-class="{ active: $route.current.activetab == 'lineas' }">
+						<a href="#!/lineas">Líneas EMT</a>
+					</li> -->
+					<li ng-class="{ active: $route.current.activetab == 'paradas-taxi' }">
+						<!-- <a href="#!/paradastaxi">Paradas Taxi</a> -->
+						<a href="#!/mapataxi">Paradas Taxi</a>
+					</li>
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</div>
+	</nav>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div ng-view></div>	
+		</div>
+	</div>
+
+	<div class="text-center">
+		<p class="text-center text-info">
+			Desarrollado por <a href="http://www.palmacodi.net" target="_top">palmacodi.net</a>
+		</p>
+	</div>
+	
+	<!--	Librerías -->
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular-messages/angular-messages.min.js"></script>
+	<script src="bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
+	<script src="bower_components/angular-route/angular-route.min.js"></script>
+	<script src="bower_components/angular-simple-logger/dist/angular-simple-logger.min.js"></script>
+	<script src="bower_components/lodash/dist/lodash.min.js"></script>
+	<script src="bower_components/angular-google-maps/dist/angular-google-maps.min.js"></script>
+	<!-- <script src="bower_components/angular-jwt/dist/angular-jwt.js"></script> -->
+	<!-- <script src="bower_components/fontawesome-markers/fontawesome-markers.min.js"></script> -->
+	 
+	 <!-- <script src="bower_components/ngmap/app.js"></script> -->
+	
+	<!-- main App -->
+	<script src="js/app.min.js"></script>
+
+	<!-- Servicios & Factorías -->
+	<script src="scripts/factories/authInterceptor.factory.min.js"></script>
+	<script src="scripts/services/token.service.min.js"></script>
+	<script src="scripts/factories/data.factory.min.js"></script>
+
+	<!-- Controladores -->
+	<script src="scripts/controllers/header/index.controller.min.js"></script>
+	<script src="scripts/controllers/aparcamientos/index.controller.min.js"></script>
+	<script src="scripts/controllers/aparcamientos/listar.controller.min.js"></script>
+	<script src="scripts/controllers/aparcamientos/mapa.controller.min.js"></script>
+	<script src="scripts/controllers/avisos/index.controller.min.js"></script>
+	<script src="scripts/controllers/bicipalma/index.controller.min.js"></script>
+	<script src="scripts/controllers/bicipalma/estados.controller.min.js"></script>
+	<script src="scripts/controllers/bicipalma/mapa.controller.min.js"></script>
+	<script src="scripts/controllers/camaras/index.controller.min.js"></script>
+	<!-- <script src="scripts/controllers/estacioneselectricas/index.controller.min.js"></script> -->
+	<script src="scripts/controllers/estacioneselectricas/mapa.controller.min.js"></script>
+	<script src="scripts/controllers/home/index.controller.min.js"></script>
+	<script src="scripts/controllers/lineas/index.controller.min.js"></script>
+	<script src="scripts/controllers/paradas/index.controller.min.js"></script>
+	<script src="scripts/controllers/paradas/listar.controller.min.js"></script>
+	<script src="scripts/controllers/paradas/consultar.controller.min.js"></script>
+	<script src="scripts/controllers/paradas/consultarsingle.controller.min.js"></script>
+	<!-- <script src="scripts/controllers/paradastaxi/index.controller.min.js"></script> -->
+	<script src="scripts/controllers/paradastaxi/mapa.controller.min.js"></script>
+	<script src="scripts/controllers/trayectos/index.controller.min.js"></script>
+	<!-- <script src="bower_components/angular-route/angular-route.js"></script> -->
+
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="js/ui.min.js"></script>
+
+</body>
+</html>

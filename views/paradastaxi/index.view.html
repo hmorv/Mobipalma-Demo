@@ -1,0 +1,27 @@
+<div class="col-md-6 col-md-offset-3 fadein-fast">
+    <h1 class="text-center">Paradas Taxi</h1>
+    <h2 class="text-info text-center" ng-if="datos.length > 0">Hay {{ datos.length }} paradas</h2>
+    <h2 class="text-info text-center" ng-if="datos.length == 0">No hay paradas activos</h2>
+
+    <ul class="list-group" ng-if="datos.length > 0">
+    	<li class="list-group-item" ng-repeat="parada in datos">
+    		<ul class="list-group">
+    			<li class="list-group-item bg-danger">Clave parada: {{ parada.clave }}</li>
+    			<li class="list-group-item bg.info"><p>Dirección: {{ parada.direccion }}</p></li>
+    			<!-- <li class="list-group-item">
+    				<h2 class="text-primary">Plazas: {{ parada.numeroPlazas }}</h2>
+    			</li> -->
+    			<li class="list-group-item">
+    				<p class="text-success">Horario: {{ parada.horarioEs }}</p>
+    			</li>
+    			<!-- <li class="list-group-item">
+    				<p class="text-muted text-center"><b>Fecha inicio:</b> {{ aviso.fechaInicio | date:'dd-MM-yyyy HH:mm:ss' }} - <b>Fecha fin:</b> {{ aviso.fechaFin | date:'dd-MM-yyyy HH:mm:ss' }}</p>
+    			</li>
+    			<li class="list-group-item">
+    				<p class="text-muted text-center"><b>Servicio Emisor:</b> {{ aviso.servicioEmisorLabel }} - <b>Prioridad:</b> {{ aviso.prioridad }}</p>
+    			</li> -->
+    		</ul>
+    	</li>
+        <p class="text-danger" ng.if="!datos">No hay datos disponibles!</p>
+    </ul>
+</div>
